@@ -55,7 +55,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "fw"
+name = "fwif"
 version = "0.1.0"
 dependencies = [
  "colored",
