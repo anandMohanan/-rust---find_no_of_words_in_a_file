@@ -1,5 +1,5 @@
+use colored::*;
 use std::collections::HashMap;
-
 use structopt::StructOpt;
 mod map;
 
@@ -11,8 +11,15 @@ struct Cli {
 
 fn main() {
     let args = Cli::from_args();
-    let content: String = std::fs::read_to_string(&args.file_name).expect("cannot read file");
-
+    let content: Result<String, std::io::Error> = std::fs::read_to_string(&args.file_name);
+    let content = match content {
+        Ok(res) => res,
+        Err(error) => {
+            println!("{}", "Error occured:".red());
+            println!("{}", error.to_string().yellow());
+            panic!("{}", "Enter a valid file name,Closing the program!!".red());
+        }
+    };
     let result: HashMap<String, i32> = map::find_words(content);
     println!("{:#?}", result);
 }

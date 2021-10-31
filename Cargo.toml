@@ -1,10 +1,19 @@
 [package]
-name = "find_no_of_words_in_a_file"
+name = "fw"
 version = "0.1.0"
 edition = "2021"
+authors = ["Anand mohanan <ananthkvmohanan@gmail.com>"]
+license = "MIT OR Apache-2.0"
+description = "A tool to get the no. of words in a file"
+readme = "README.md"
+homepage = "https://github.com/anandMohanan/find_no_of_words_in_a_file"
+repository = "https://github.com/anandMohanan/find_no_of_words_in_a_file"
+keywords = ["cli", "search", "demo"]
+categories = ["command-line-utilities"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 structopt = "0.3.13"
+colored = "2.0.0"
 
